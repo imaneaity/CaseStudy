@@ -1,3 +1,8 @@
+# Context
+This repo is for solving a case study for the role of a junior SRE/DevOps engineer, references have been mentioned throughout the repo.
+As well as online ressources this work has been completed with the help of AI tools.
+
+
 # Link Extractor
 
 A simple CLI tool that fetches all hyperlinks from one or more URLs and displays them either as:
