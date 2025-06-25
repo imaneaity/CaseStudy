@@ -57,3 +57,41 @@ Interpretation:
 The script is modified to sleep after execution so it can run as a Pod in Kubernetes without exiting.
 
 
+## DockerHub Deployment
+
+The Docker image was successfully pushed to Docker Hub using the following steps:
+
+```bash
+docker login
+docker tag link-extractor dockerhubusername/link-extractor:latest
+docker push dockerhubusername/link-extractor:latest
+```
+
+
+## DockerHub Deployment
+
+The Docker image was successfully pushed to Docker Hub using the following steps:
+
+```bash
+docker login
+docker tag link-extractor dockerhubusername/link-extractor:latest
+docker push dockerhubusername/link-extractor:latest
+```
+
+The Kubernetes manifest (`link-extractor-pod.yaml`) was configured to pull the image from Docker Hub:
+
+```yaml
+image: dockerhubusername/link-extractor:latest
+args: ["-u", "https://news.ycombinator.com", "-o", "stdout"]
+```
+
+The pod was then deployed and verified with:
+
+```bash
+kubectl apply -f link-extractor-pod.yaml
+kubectl logs link-extractor
+```
+
+This confirms the tool works end-to-end inside Kubernetes using the published Docker image.
+
+
