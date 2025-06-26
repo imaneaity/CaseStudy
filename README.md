@@ -2,6 +2,24 @@
 This repo is for solving a case study for the role of a junior SRE/DevOps engineer. References have been mentioned throughout the repo.
 As well as online resources, this work has been completed with the help of AI tools.
 
+# Requirements
+
+To run this project locally or inside a container, you will need:
+
+- Python 3.7+
+- pip (Python package manager)
+- Docker (for containerization)
+- Kubernetes CLI (`kubectl`) – optional for K8s testing
+- GitHub Actions (for CI/CD)
+- The following Python libraries:
+  - `requests`
+  - `beautifulsoup4`
+
+Install them locally using:
+```bash
+pip install -r requirements.txt
+```
+
 # Link Extractor
 
 A simple CLI tool that fetches all hyperlinks from one or more URLs and displays them either as:
@@ -19,22 +37,6 @@ A simple CLI tool that fetches all hyperlinks from one or more URLs and displays
 - Secure-by-default: runs as non-root user
 - Successfully passes a vulnerability scan using Trivy
 
-## Requirements
-
-To run this project locally or inside a container, you will need:
-
-- Python 3.7+
-- pip (Python package manager)
-- Docker (for containerization)
-- Kubernetes CLI (`kubectl`) – optional for K8s testing
-- GitHub Actions (for CI/CD)
-- The following Python libraries:
-  - `requests`
-  - `beautifulsoup4`
-
-Install them locally using:
-```bash
-pip install -r requirements.txt
 
 
 
@@ -49,9 +51,9 @@ python extractor.py -u https://news.ycombinator.com https://arstechnica.com -o j
 ```
 These are the results of the implementation:
 
-![GitHub Secrets](pictures/part1.1.png)
+![GitHub Secrets](pictures/part 1.1.png)
 
-![GitHub Secrets](pictures/part1.2.png)
+![GitHub Secrets](pictures/part 1.2.png)
 
 
 ## Docker Overview
