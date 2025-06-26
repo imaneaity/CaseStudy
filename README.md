@@ -51,9 +51,9 @@ python extractor.py -u https://news.ycombinator.com https://arstechnica.com -o j
 ```
 These are the results of the implementation:
 
-![GitHub Secrets](pictures/part 1.1.png)
+![GitHub Secrets](pictures/part1.1.png)
 
-![GitHub Secrets](pictures/part 1.2.png)
+![GitHub Secrets](pictures/part1.2.png)
 
 
 ## Docker Overview
