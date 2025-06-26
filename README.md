@@ -95,3 +95,67 @@ kubectl logs link-extractor
 This confirms the tool works end-to-end inside Kubernetes using the published Docker image.
 
 
+## CI/CD Pipeline with GitHub Actions
+
+A GitHub Actions workflow is set up to:
+- Build the Docker image
+- Push it to DockerHub
+- Scan it with Trivy for vulnerabilities
+
+### Secrets Required
+Add the following secrets to your GitHub repo under:
+**Settings > Secrets and variables > Actions**
+
+| Name              | Description              |
+|-------------------|--------------------------|
+| DOCKER_USERNAME   | Your DockerHub username  |
+| DOCKER_PASSWORD   | Your DockerHub password or token |
+
+### Trigger
+The pipeline runs automatically on every push to the `master` branch.
+
+Workflow file: `.github/workflows/ci-cd.yml`
+
+## Part 3 Reference
+
+A detailed write-up of the CI/CD pipeline and its screenshots is available in:
+`Part3-pipeline.md`
+
+---
+
+## Part 4 – Domain Extraction with Shell Tools
+
+This part focuses on using Unix tools like `awk`, `tr`, `sed`, and `grep` to clean and normalize domain names from a text file.
+
+### Example Input (`input.txt`)
+
+```
+http://tiktok.com
+https://ads.faceBook.com.
+https://sub.ads.faCebook.com
+api.tiktok.com
+Google.com.
+aws.amazon.com
+```
+
+### Expected Output
+
+```
+tiktok.com
+facebook.com
+google.com
+amazon.com
+```
+
+### How to Run
+
+1. Ensure `input.txt` contains the sample URLs.
+2. Run the script:
+
+```bash
+chmod +x domain_extraction.sh
+./domain_extraction.sh
+```
+
+Both methods will extract the main domain names, normalize them to lowercase, and remove duplicates.
+
